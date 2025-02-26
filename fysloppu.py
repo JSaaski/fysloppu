@@ -9,7 +9,7 @@ import scipy.signal as signal
 from scipy.fft import fft, fftfreq
 from math import radians, sin, cos, sqrt, asin
 
-
+urlacc = ""
 df = pd.read_csv("Linear Accelerometer.csv")
 
 
@@ -51,7 +51,7 @@ def haversine(lon1, lat1, lon2, lat2):
     a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
     c = 2 * asin(sqrt(a))
     return c * R * 1000  # metreiksi
-
+urlloc = ""
 df_loc = pd.read_csv("Location.csv")
 df_loc["dist"] = np.zeros(len(df_loc))
 df_loc["time_diff"] = np.zeros(len(df_loc))
