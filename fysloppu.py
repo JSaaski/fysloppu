@@ -9,8 +9,8 @@ import scipy.signal as signal
 from scipy.fft import fft, fftfreq
 from math import radians, sin, cos, sqrt, asin
 
-urlacc = ""
-df = pd.read_csv("Linear Accelerometer.csv")
+urlacc = "https://raw.githubusercontent.com/JSaaski/fysloppu/refs/heads/main/Linear%20Accelerometer.csv"
+df = pd.read_csv(urlacc)
 
 
 def butter_lowpass_filter(data, cutoff, fs, nyq, order):
@@ -51,8 +51,8 @@ def haversine(lon1, lat1, lon2, lat2):
     a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
     c = 2 * asin(sqrt(a))
     return c * R * 1000  # metreiksi
-urlloc = ""
-df_loc = pd.read_csv("Location.csv")
+urlloc = "https://raw.githubusercontent.com/JSaaski/fysloppu/refs/heads/main/Location.csv"
+df_loc = pd.read_csv(urlloc)
 df_loc["dist"] = np.zeros(len(df_loc))
 df_loc["time_diff"] = np.zeros(len(df_loc))
 #Lasketaan nopeus ja matka
